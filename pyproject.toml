@@ -1,0 +1,111 @@
+[build-system]
+requires = ["scikit-build-core>=0.9.0", "pybind11>=2.11.0", "numpy", "scipy", "pybind11-stubgen"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "pdhcg"
+version = "0.3.1"
+description = "Python bindings for PDHCG, GPU accelerated first order solver for Quadratic Programming"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.8"
+authors = [
+  { name = "Hongpei Li" },
+  { name = "Yicheng Huang" },
+  { name = "Huikang Liu" },
+  { name = "Dongdong Ge" },
+  { name = "Yinyu Ye" }
+]
+dependencies = ["numpy>=1.21", "scipy>=1.8"]
+
+[tool.scikit-build]
+build-dir = "build/{wheel_tag}"
+cmake.version = ">=3.20"
+cmake.build-type = "Release"
+wheel.packages = ["python/pdhcg"]
+sdist.include = ["tests/**", "CHANGELOG.md", "pyproject.toml", "README.md", "LICENSE"]
+
+[tool.scikit-build.cmake.define]
+CMAKE_CUDA_STANDARD = "17"
+PDHCG_BUILD_PYTHON = "ON"
+PDHCG_BUILD_STATIC_LIB = "ON"
+PDHCG_BUILD_SHARED_LIB = "OFF"
+PDHCG_BUILD_CLI = "OFF"
+PDHCG_BUILD_TESTS = "OFF"
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8",
+  "pytest-cov>=4",
+  "cvxpy>=1.6; python_version >= '3.9'",
+  "numpy",
+  "scipy"
+]
+cvxpy = [
+  "cvxpy>=1.6; python_version >= '3.9'",
+]
+dev = [
+  "ruff>=0.9.0",
+  "pre-commit>=4.0.0",
+  "mkdocs-material>=9.5.0",
+  "mkdocstrings[python]>=0.24.0",
+  "pymdown-extensions>=10.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = """
+-q
+-ra
+--strict-markers
+--maxfail=1
+--cov=pdhcg
+--cov-report=term-missing
+--cov-report=xml
+"""
+markers = [
+  "gpu: requires a CUDA-capable GPU"
+]
+xfail_strict = true
+filterwarnings = [
+  "error::FutureWarning",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["pdhcg"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+skip_covered = true
+
+[tool.ruff]
+target-version = "py38"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+  "E",   # pycodestyle errors
+  "F",   # Pyflakes
+  "I",   # isort
+  "W",   # pycodestyle warnings
+  "B",   # flake8-bugbear
+  "C4",  # flake8-comprehensions
+  "SIM", # flake8-simplify
+]
+ignore = [
+  "E501",  # Line too long (handled by formatter)
+  "E741",  # Ambiguous variable names (l, I, O) - we use single letter names for math variables
+  "B028",  # No explicit stacklevel in warnings - not needed for our use case
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
