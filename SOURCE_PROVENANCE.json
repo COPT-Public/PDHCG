@@ -1,0 +1,25 @@
+{
+  "project": "PDHCG",
+  "release": "20261001-r2",
+  "base_package": "PDHCG-0ea26da-coinor",
+  "upstream": "https://github.com/Lhongpei/PDHCG",
+  "reference_paper": "https://arxiv.org/abs/2608.09159",
+  "manager": {
+    "name": "Huikang Liu",
+    "email": "hkl1u@sjtu.edu.cn"
+  },
+  "declared_project_owner": "Dongdong Ge",
+  "license": "Apache-2.0",
+  "declaration_date": "2026-10-01",
+  "numerical_source_scope": "Fresh per-run result directories; negative checker regression.\nTest the installed executable; CUDA architecture defaults to native and is\noverridable. Updated PDHCG-CQP reference, contacts and ownership declaration.",
+  "third_party_notice": "THIRD_PARTY_NOTICES",
+  "upstream_commit": "0ea26dab177e3b75190915a3aa083535fbfa935b",
+  "validation": "VALIDATION.md",
+  "repository": "https://github.com/COPT-Public/PDHCG",
+  "public_integration_date": "2026-10-02",
+  "base_public_commit": "ea58e84",
+  "package_source": "PDHCG-coinor-20261001-r2-source.zip",
+  "package_sha256": "8d5c6800f123b92dbe20018e6bbf97c6bb58a30f07c93d1aaf145b66c08bb1d5",
+  "layout": "Upstream source remains at the repository root; build.sh configures -S .",
+  "solver_source_changes": "None: solver, headers, Python interfaces and CMake match upstream 0ea26dab177e3b75190915a3aa083535fbfa935b."
+}

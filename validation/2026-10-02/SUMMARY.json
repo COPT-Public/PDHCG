@@ -1,0 +1,22 @@
+{
+  "project": "PDHCG",
+  "timestamp_utc": "2026-10-02T05:47:21.336218+00:00",
+  "host": "validation-host",
+  "primal_feasibility_tolerance": 1e-06,
+  "pass": true,
+  "solver_exit": 0,
+  "x": [
+    1.000000102,
+    2.000000052
+  ],
+  "objective": -8.999999999999986,
+  "primal_residual": 1.5399999986343005e-07,
+  "reported_dual_residual": 6.110588e-09,
+  "run_directory": "/validation-workspace/PDHCG/tests/logs/tiny/run-nm0exvz0",
+  "build_and_install_exit": 0,
+  "checker_regressions": {
+    "stale_output": "PASS",
+    "incorrect_fresh_solution": "PASS"
+  },
+  "source_file_hashes_verified": 121
+}

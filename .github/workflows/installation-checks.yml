@@ -1,0 +1,48 @@
+name: Installation checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      run_gpu:
+        description: Run the installed solver on an existing self-hosted NVIDIA runner
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  checker:
+    name: Checker regressions (CPU, no solver execution)
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: python -m pip install numpy==1.26.4
+      - name: Validate shell syntax
+        run: bash -n build.sh
+      - name: Reject stale and incorrect solver output
+        run: python tests/check_checker.py --project PDHCG
+
+  gpu:
+    name: Installed CLI (NVIDIA GPU)
+    if: github.event_name == 'workflow_dispatch' && inputs.run_gpu
+    runs-on: [self-hosted, linux, x64, nvidia-gpu]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build, install and verify on GPU
+        run: bash build.sh
+      - name: Upload numerical reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdhcg-gpu-installation-results
+          path: tests/logs/

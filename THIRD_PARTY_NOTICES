@@ -1,0 +1,16 @@
+PDHCG: third-party and inherited-code notices
+
+Project-owned license: Apache-2.0. See OWNERSHIP.txt for the declared owner.
+Existing component notices and license terms take precedence for their files.
+
+Inherited code:
+- cuPDLPx infrastructure: original Apache-2.0 notices for Haihao Lu and Hongpei
+  Li remain in LICENSE and source headers. Project-owned changes have the owner
+  declaration in OWNERSHIP.txt; it does not replace inherited notices.
+External: NVIDIA CUDA runtime/cuBLAS/cuSPARSE/cuSOLVER, under NVIDIA terms;
+system zlib, under its own license. These external binaries are not bundled.
+PreFOS fetching, MPI/NCCL and Python bindings are disabled in the documented
+single-GPU build. They are outside this validated distribution configuration.
+
+Test tooling: external Python 3 and NumPy 1.26.4; neither is bundled.
+Build tools and proprietary external runtimes are installed separately.

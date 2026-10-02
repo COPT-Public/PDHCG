@@ -1,0 +1,133 @@
+VALIDATION_ENVIRONMENT
+Linux 5.15.0-191-generic x86_64 GNU/Linux
+PRETTY_NAME="Ubuntu 22.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+cmake version 3.30.5
+3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]
+NumPy 1.26.4
+NVIDIA GeForce RTX 4090, 580.82.07
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Fri_Feb_21_20:23:50_PST_2025
+Cuda compilation tools, release 12.8, V12.8.93
+Build cuda_12.8.r12.8/compiler.35583870_0
+Generated analytical problems in /validation-workspace/PDHCG/examples
+++ dirname build.sh
++ cd .
++ CM=/validation-tools/python/cmake/data/bin/cmake
++ PY=python3
++ export CUDA_VISIBLE_DEVICES=0
++ CUDA_VISIBLE_DEVICES=0
++ export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 MKL_THREADING_LAYER=SEQUENTIAL
++ OMP_NUM_THREADS=1
++ OPENBLAS_NUM_THREADS=1
++ MKL_NUM_THREADS=1
++ MKL_THREADING_LAYER=SEQUENTIAL
++ python3 tests/generate_problem.py
++ export CUDA_HOME=/usr/local/cuda-12.8
++ CUDA_HOME=/usr/local/cuda-12.8
++ export CUDACXX=/usr/local/cuda-12.8/bin/nvcc
++ CUDACXX=/usr/local/cuda-12.8/bin/nvcc
++ /validation-tools/python/cmake/data/bin/cmake -S . -B build-coinor -DCMAKE_BUILD_TYPE=Release -DCMAKE_CUDA_ARCHITECTURES=89 -DCMAKE_INSTALL_PREFIX=/validation-workspace/PDHCG/.coinor-deps/pdhcg-install -DPDHCG_BUILD_STATIC_LIB=ON -DPDHCG_BUILD_CLI=ON -DPDHCG_BUILD_PYTHON=OFF -DPDHCG_BUILD_TESTS=OFF -DPDHCG_BUILD_SHARED_LIB=OFF -DPDHCG_COMPILE_PREFOS=OFF -DPDHCG_COMPILE_DISTRIBUTED=OFF
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- The CUDA compiler identification is NVIDIA 12.8.93
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda-12.8/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Found CUDAToolkit: /usr/local/cuda-12.8/targets/x86_64-linux/include (found version "12.8.93")
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11")
+-- PreFOS integration disabled (PDHCG_COMPILE_PREFOS=OFF).
+-- PDHCG Distributed Mode: DISABLED (Building for single-node execution)
+-- Configuring done (3.9s)
+-- Generating done (0.0s)
+-- Build files have been written to: /validation-workspace/PDHCG/build-coinor
++ /validation-tools/python/cmake/data/bin/cmake --build build-coinor --target PDHCG_cli --parallel 4
+[  3%] Building C object CMakeFiles/pdhcg_core.dir/src/cbf_parser.c.o
+[  6%] Building C object CMakeFiles/pdhcg_core.dir/src/cone_utils.c.o
+[ 13%] Building C object CMakeFiles/pdhcg_core.dir/src/partition_utils.c.o
+[ 13%] Building C object CMakeFiles/pdhcg_core.dir/src/mps_parser.c.o
+[ 16%] Building C object CMakeFiles/pdhcg_core.dir/src/pdhcg.c.o
+[ 20%] Building C object CMakeFiles/pdhcg_core.dir/src/preconditioner.c.o
+[ 23%] Building C object CMakeFiles/pdhcg_core.dir/src/presolve_wrapper.c.o
+[ 26%] Building C object CMakeFiles/pdhcg_core.dir/src/qcqp_transform.c.o
+[ 30%] Building C object CMakeFiles/pdhcg_core.dir/distributed/distributed_ops_stub.c.o
+[ 33%] Building C object CMakeFiles/pdhcg_core.dir/distributed/distributed_conic_stub.c.o
+[ 36%] Building CUDA object CMakeFiles/pdhcg_core.dir/src/cone_dispatch.cu.o
+[ 40%] Building CUDA object CMakeFiles/pdhcg_core.dir/src/kernels/pdhcg_affine_cone_kernels.cu.o
+[ 43%] Building CUDA object CMakeFiles/pdhcg_core.dir/src/kernels/pdhcg_cone_common_kernels.cu.o
+[ 46%] Building CUDA object CMakeFiles/pdhcg_core.dir/src/kernels/pdhcg_exp_cone_kernels.cu.o
+[ 50%] Building CUDA object CMakeFiles/pdhcg_core.dir/src/kernels/pdhcg_kernels.cu.o
+[ 53%] Building CUDA object CMakeFiles/pdhcg_core.dir/src/kernels/pdhcg_power_cone_kernels.cu.o
+[ 56%] Building CUDA object CMakeFiles/pdhcg_core.dir/src/kernels/pdhcg_psd_cone_kernels.cu.o
+[ 60%] Building CUDA object CMakeFiles/pdhcg_core.dir/src/kernels/pdhcg_rsoc_cone_kernels.cu.o
+[ 63%] Building CUDA object CMakeFiles/pdhcg_core.dir/src/kernels/pdhcg_soc_cone_kernels.cu.o
+[ 66%] Building CUDA object CMakeFiles/pdhcg_core.dir/src/pdhg_core_op.cu.o
+[ 70%] Building CUDA object CMakeFiles/pdhcg_core.dir/src/permute.cu.o
+[ 73%] Building CUDA object CMakeFiles/pdhcg_core.dir/src/solver.cu.o
+[ 76%] Building CUDA object CMakeFiles/pdhcg_core.dir/src/solver_state.cu.o
+[ 80%] Building CUDA object CMakeFiles/pdhcg_core.dir/src/spmv_backend.cu.o
+[ 83%] Building CUDA object CMakeFiles/pdhcg_core.dir/src/utils.cu.o
+[ 86%] Linking CUDA device code CMakeFiles/pdhcg_core.dir/cmake_device_link.o
+[ 90%] Linking CUDA static library libpdhcg_core.a
+[ 90%] Built target pdhcg_core
+[ 93%] Building C object CMakeFiles/PDHCG_cli.dir/src/cli.c.o
+[ 96%] Linking CUDA device code CMakeFiles/PDHCG_cli.dir/cmake_device_link.o
+[100%] Linking CUDA executable pdhcg
+[100%] Built target PDHCG_cli
+-- Install configuration: "Release"
+-- Installing: /validation-workspace/PDHCG/.coinor-deps/pdhcg-install/lib/libpdhcg_core.a
+-- Installing: /validation-workspace/PDHCG/.coinor-deps/pdhcg-install/bin/pdhcg
+-- Installing: /validation-workspace/PDHCG/.coinor-deps/pdhcg-install/include/
+-- Installing: /validation-workspace/PDHCG/.coinor-deps/pdhcg-install/include//pdhcg_types.h
+-- Installing: /validation-workspace/PDHCG/.coinor-deps/pdhcg-install/include//cbf_parser.h
+-- Installing: /validation-workspace/PDHCG/.coinor-deps/pdhcg-install/include//presolve_wrapper.h
+-- Installing: /validation-workspace/PDHCG/.coinor-deps/pdhcg-install/include//pdhcg.h
+-- Installing: /validation-workspace/PDHCG/.coinor-deps/pdhcg-install/include//mps_parser.h
++ /validation-tools/python/cmake/data/bin/cmake --install build-coinor
++ python3 tests/run.py --project PDHCG --binary /validation-workspace/PDHCG/.coinor-deps/pdhcg-install/bin/pdhcg
+{
+  "project": "PDHCG",
+  "timestamp_utc": "2026-10-02T05:47:21.336218+00:00",
+  "host": "gpu4090",
+  "primal_feasibility_tolerance": 1e-06,
+  "pass": true,
+  "solver_exit": 0,
+  "x": [
+    1.000000102,
+    2.000000052
+  ],
+  "objective": -8.999999999999986,
+  "primal_residual": 1.5399999986343005e-07,
+  "reported_dual_residual": 6.110588e-09,
+  "run_directory": "/validation-workspace/PDHCG/tests/logs/tiny/run-nm0exvz0"
+}
++ python3 tests/check_checker.py --project PDHCG
+PASS checker regression: stale_success_with_noop
+PASS checker regression: incorrect_fresh_solution

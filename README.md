@@ -1,5 +1,46 @@
 # PDHCG: A First-Order Solver for Quadratic Conic Programming with (Multi-) GPU Acceleration
 
+## COIN-OR submission: installation and testing
+
+This repository contains PDHCG-CQP and the build, installation and testing
+materials prepared for COIN-OR review. Future review and updates use
+https://github.com/COPT-Public/PDHCG.
+
+- Project manager: Huikang Liu (<hkl1u@sjtu.edu.cn>).
+- Authors: [AUTHORS](AUTHORS); paper references: [CITATION.txt](CITATION.txt).
+- License and ownership: [LICENSE](LICENSE), [OWNERSHIP.txt](OWNERSHIP.txt),
+  and [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES); inherited notices are retained.
+- Installation: [INSTALL](INSTALL); test scope and extension instructions:
+  [tests/README.md](tests/README.md); analytic example: [examples/README.md](examples/README.md).
+- Verification evidence: [VALIDATION.md](VALIDATION.md).
+- Bugs, support and feature requests: https://github.com/COPT-Public/PDHCG/issues.
+- Contributions: [CONTRIBUTING.md](CONTRIBUTING.md);
+  [COIN-OR Code of Conduct](https://www.coin-or.org/code-of-conduct/).
+
+The documented Linux single-GPU installation check requires C/C++, CMake >=3.24,
+CUDA >=12.4, an NVIDIA GPU and driver, zlib development headers, Python 3 and
+NumPy. CUDA libraries and other external dependencies are installed separately.
+The check disables optional PreFOS, MPI/NCCL and Python bindings.
+
+```bash
+git clone https://github.com/COPT-Public/PDHCG.git
+cd PDHCG
+# Follow INSTALL to set up dependencies; adjust CUDA_HOME for your machine.
+CUDA_HOME=/usr/local/cuda GPU_ARCH=native bash build.sh
+```
+
+This builds and installs the CLI, runs the installed executable on a bundled
+QP with known optimum x=(1,2) and objective -9, and rejects stale or incorrect
+test output. Exit status 0 indicates success. These are installation correctness
+checks, not performance benchmarks or coverage of every optional feature.
+The hosted CI checks the verifier without a GPU; GPU execution is a separate
+opt-in workflow job. See VALIDATION.md for actual hardware test results.
+
+The solver sources remain in their original root-level directories (src/,
+include/, internal/, distributed/, etc.). The earlier Google Drive source
+package placed those directories under source/; build.sh is adapted here to
+the public repository layout. Legal submission forms are handled separately.
+
 ## Source and Attribution
 
 This repository was initialized on September 30, 2026 (Asia/Shanghai) from [Lhongpei/PDHCG](https://github.com/Lhongpei/PDHCG).
@@ -49,7 +90,7 @@ To use the standalone C++ solver, you must compile the project using CMake.
 ### Build from Source
 Clone the repository and compile the project using CMake.
 ```bash
-git clone https://github.com/Lhongpei/PDHCG.git
+git clone https://github.com/COPT-Public/PDHCG.git
 cd PDHCG
 cmake -S . -B build
 cmake --build build --clean-first
@@ -58,7 +99,7 @@ This will create the solver binary at `./build/pdhcg`.
 
 If your system has multiple CUDA versions or the default nvcc is outdated (e.g., in `/usr/bin/nvcc`), you should explicitly specify the path to your modern CUDA compiler using the CUDACXX environment variable.
 ```bash
-git clone https://github.com/Lhongpei/PDHCG.git
+git clone https://github.com/COPT-Public/PDHCG.git
 cd PDHCG
 # Replace '/your/path/to/nvcc' with the actual path, e.g., /usr/local/cuda-12.6/bin/nvcc
 CUDACXX=/your/path/to/nvcc cmake -S . -B build

@@ -1,0 +1,13 @@
+PDHCG ownership and maintenance
+
+The submitting team declares Dongdong Ge as the owner of project-owned original
+contributions. Project-owned contributions are distributed under Apache-2.0.
+This declaration does not transfer or supersede rights in inherited code.
+Existing Hongpei Li and Haihao Lu notices and all third-party notices remain
+in effect; see LICENSE and THIRD_PARTY_NOTICES.
+
+Project manager: Huikang Liu <hkl1u@sjtu.edu.cn>
+Project home: https://github.com/COPT-Public/PDHCG
+
+COIN-OR ownership/licensing forms are handled separately. This repository does
+not assert that forms have been signed/filed or that COIN-OR has accepted it.

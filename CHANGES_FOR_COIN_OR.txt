@@ -1,0 +1,12 @@
+PDHCG public repository integration — 2026-10-02
+
+Imported the COIN-OR documentation and installation checks from the verified
+PDHCG-coinor-20261001-r2-source.zip package. Solver algorithms are unchanged.
+Kept the original flat source tree and adapted build.sh to configure -S .
+Added AUTHORS, INSTALL, README, contacts, contribution instructions, ownership
+scope, inherited-code notices, citation and provenance information.
+Added the analytic QP example, independent numerical verification and two
+regressions that reject stale outputs and fresh incorrect solutions.
+Aligned fixture metadata with the verifier's 1e-6 feasibility threshold.
+Added hosted checker CI and an opt-in self-hosted NVIDIA build/install/test job.
+Legal forms remain separate from the public repository.

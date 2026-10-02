@@ -1,0 +1,14 @@
+PDHCG authors and retained credits
+
+Hongpei Li
+Yicheng Huang
+Huikang Liu
+Dongdong Ge
+Yinyu Ye
+
+Earlier QP work also credits Wanyu Zhang (with Yicheng Huang, Hongpei Li, Dongdong Ge, Huikang Liu and Yinyu Ye). Reference: https://doi.org/10.1287/ijoc.2024.0983 . Inherited cuPDLPx code retains Haihao Lu and Hongpei Li copyright/author notices.
+
+Reference paper: https://arxiv.org/abs/2608.09159
+Research-paper attribution is included in CITATION.txt. The code contribution
+history and inherited notices remain part of the authorship record.
+Copyright ownership is stated separately in OWNERSHIP.txt.

@@ -1,0 +1,11 @@
+PDHCG
+https://arxiv.org/abs/2608.09159
+
+Reference-paper authors / upstream project credits:
+Hongpei Li
+Yicheng Huang
+Huikang Liu
+Dongdong Ge
+Yinyu Ye
+
+Earlier QP reference: https://doi.org/10.1287/ijoc.2024.0983

@@ -68,3 +68,8 @@ test/*
 *.pyc
 *.tar.gz
 docs/README.md
+
+# COIN-OR local build tooling and transient test results
+/.coinor-deps/
+/tests/logs/
+__pycache__/

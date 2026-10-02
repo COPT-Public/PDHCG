@@ -1,0 +1,16 @@
+NAME          TINYQP
+ROWS
+ N  COST
+ E  EQ1
+COLUMNS
+    X1        COST     -2             EQ1       1
+    X2        COST     -8             EQ1       1
+RHS
+    RHS1      EQ1       3
+BOUNDS
+ LO BND1      X1        0
+ LO BND1      X2        0
+QUADOBJ
+    X1        X1        2
+    X2        X2        4
+ENDATA
