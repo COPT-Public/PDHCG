@@ -38,7 +38,8 @@ the real installed-GPU-executable run performed by build.sh.
 
 Maintainers can manually dispatch the same workflow with run_gpu=true on an
 existing self-hosted Linux x64 runner labelled nvidia-gpu. That runner needs the
-dependencies in INSTALL. GPU execution is opt-in and is not required for the
+dependencies in INSTALL and Actions Runner >=2.327.1 for the Node.js 24 actions.
+GPU execution is opt-in and is not required for the
 hosted CPU job. GPU validation evidence is recorded separately in VALIDATION.md.
 The original upstream test/ and tests/test_*.py suites are retained; they are
 outside this small installation check's validated scope.
